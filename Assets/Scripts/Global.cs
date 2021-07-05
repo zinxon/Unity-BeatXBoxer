@@ -15,10 +15,9 @@ public class Global : MonoBehaviour {
     
     
     void Start () {
-        var path = Application.streamingAssetsPath + "/songlist.txt";
+        string path = Application.streamingAssetsPath + "/songlist.txt";
         Data = File.ReadAllText(path);
         SongArray = Data.Replace("\r", "").Replace(" ", "").Replace("\n", " ").Split(' ');
-
     }
 	
 	// Update is called once per frame
@@ -26,3 +25,4 @@ public class Global : MonoBehaviour {
         DontDestroyOnLoad(this);
     }
 }
+
