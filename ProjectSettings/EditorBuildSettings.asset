@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Starting_Scene.unity
-    guid: 2b581add9e3113f4bb860e8ea792c580
+    path: Assets/Scenes/TitleScene.unity
+    guid: 6538a624e2a47214db4e357e91d3a4d8
   - enabled: 1
-    path: Assets/Scenes/Scene_Choosing.unity
-    guid: 8d180606a22fa9a46a3452a007000558
-  - enabled: 1
-    path: Assets/Scenes/RhythmGame_starting.unity
-    guid: f5aa1ba760a0b6844bd35b2392073080
+    path: Assets/Scenes/GameplayScene.unity
+    guid: 01205f654bea90f41b0aa819ef384163
   m_configObjects: {}

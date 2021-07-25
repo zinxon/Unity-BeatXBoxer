@@ -1,0 +1,13 @@
+{
+  "configInfoList": [
+    { "key": "本配置文件說明" },
+    {
+      "key": "TitleMenu",
+      "value": "TitleMenu"
+    },
+    {
+      "key": "GameplayMenu",
+      "value": "GameplayMenu"
+    }
+  ]
+}
