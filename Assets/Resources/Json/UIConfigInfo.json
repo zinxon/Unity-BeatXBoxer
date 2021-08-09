@@ -8,6 +8,14 @@
     {
       "key": "GameplayMenu",
       "value": "GameplayMenu"
+    },
+    {
+      "key": "ResultMenu",
+      "value": "ResultMenu"
+    },
+    {
+      "key": "FinishMenu",
+      "value": "FinishMenu"
     }
   ]
 }

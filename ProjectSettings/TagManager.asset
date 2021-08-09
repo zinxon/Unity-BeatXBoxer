@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Background
-  - Stand
-  - Bit
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -16,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - Background
-  - Bit
-  - Stand
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -43,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 2993997171
-    locked: 0
-  - name: Object
-    uniqueID: 2272348485
     locked: 0

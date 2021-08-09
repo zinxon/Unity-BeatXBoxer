@@ -11,7 +11,7 @@ public class NoteController : MonoBehaviour
     [SerializeField] private int hitOffset;
     public int HitOffset { get => hitOffset; }
     private bool isRunning = true;
-    private Vector2 targetPos;
+    private Vector3 targetPos;
     private KoreographyEvent trackedEvent;
     private Animator anim;
 
@@ -20,7 +20,7 @@ public class NoteController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void InitNoteController(KoreographyEvent evt, Vector2 targetPos)
+    public void InitNoteController(KoreographyEvent evt, Vector3 targetPos)
     {
         if (trackedEvent == null)
         {
@@ -32,13 +32,13 @@ public class NoteController : MonoBehaviour
 
     private void Update()
     {
-        if (LevelManager.GetInstance().gameplayEnum == GameplayEnum.Pause)
+        if (LevelManager.GetInstance().gameplayEnum != GameplayEnum.Playing)
             return;
 
         UpdatePosition();
         GetHitOffset();
 
-        if (transform.position.x <= targetPos.x - 5f)
+        if (transform.position.z <= targetPos.z - 10f)
         {
             HideNote();
         }
@@ -49,15 +49,15 @@ public class NoteController : MonoBehaviour
         if (trackedEvent == null || !isRunning)
             return;
 
-        Vector2 pos = targetPos;
-        pos.x -= (MusicPlayer.GetInstance().DelayedSampleTime - trackedEvent.StartSample) / (float)MusicPlayer.GetInstance().SampleRate * MusicPlayer.GetInstance().NoteSpeed;
-
+        Vector3 pos = targetPos;
+        pos.z -= (MusicPlayer.GetInstance().DelayedSampleTime - trackedEvent.StartSample) / (float)MusicPlayer.GetInstance().SampleRate * MusicPlayer.GetInstance().NoteSpeed;
         transform.position = pos;
     }
 
     public void HideNote()
     {
         isRunning = false;
+        LevelManager.GetInstance().SetDisableNote();
         gameObject.SetActive(false);
     }
 

@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class GameplayMenu : UIBaseClass
 {
-    private void Update() {
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            LoadScene("TitleScene");
-            ShowUI("TitleMenu");
-            CloseUI("GameplayMenu");
+    private void Update()
+    {
+        if (LevelManager.GetInstance().gameplayEnum == GameplayEnum.Result && LevelManager.GetInstance().isResult == false)
+        {
+            ShowUI("FinishMenu");
+            LevelManager.GetInstance().isResult = true;
         }
     }
 
