@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class GameplayMenu : UIBaseClass
 {
+    private void Start() {
+        RigisterButtonOnClick("PauseButton", p => {
+            ShowUI("PauseMenu");
+            FindObjectOfType<MusicPlayer>().PauseAudioPlaying();
+        });
+    }
+
+
     private void Update()
     {
         if (LevelManager.GetInstance().gameplayEnum == GameplayEnum.Result && LevelManager.GetInstance().isResult == false)

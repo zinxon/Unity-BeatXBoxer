@@ -82,7 +82,7 @@ public class MusicPlayer : UnitySingleton<MusicPlayer>
         }
 
         hitWindowRangeInSamples = (int)(0.001f * hitWindowRangeInMS * SampleRate);
-    
+
         LevelManager.GetInstance().totalNoteCount = rawEventList.Count;
     }
 
@@ -92,16 +92,15 @@ public class MusicPlayer : UnitySingleton<MusicPlayer>
         {
             TimeLeadingUpdate();
             LeadInTimeLeftUpdate();
-            PauseAudioPlaying();
         }
     }
 
-    private void PauseAudioPlaying()
+    public void PauseAudioPlaying()
     {
         if (!audioSource)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isPlayAudio)
         {
             if (audioSource.isPlaying)
             {
